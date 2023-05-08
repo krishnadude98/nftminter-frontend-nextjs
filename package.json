@@ -11,6 +11,7 @@
   "dependencies": {
     "@web3uikit/icons": "^0.4.1",
     "autoprefixer": "^9",
+    "axios": "^1.4.0",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
     "moralis-v1": "^1.12.0",
