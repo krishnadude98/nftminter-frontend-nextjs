@@ -56,8 +56,7 @@ export default function MintNft() {
       if (nftAddress != null) {
         const contract = new ethers.Contract(nftAddress, abi, web3);
         console.log("inside effect");
-        contract.once("TokenMinted", (tokenId, user) => {
-          console.log("token minted with token id", tokenId);
+        contract.on("TokenMinted", (tokenId, user) => {
           setTokenId(tokenId.toString());
         });
       }
@@ -87,8 +86,6 @@ export default function MintNft() {
     setIsPinning(true);
     const formData = new FormData();
     formData.append("file", file);
-    console.log("NEXT_PUBLIC_API_KEY", process.env.NEXT_PUBLIC_API_KEY);
-    console.log("NEXT_PUBLIC_SECRET_KEY", process.env.NEXT_PUBLIC_SECRET_KEY);
     try {
       const response = await axios.post(
         "https://api.pinata.cloud/pinning/pinFileToIPFS",
@@ -98,9 +95,8 @@ export default function MintNft() {
           maxContentLength: "Infinity",
           headers: {
             "Content-Type": "multipart/form-data",
-            pinata_api_key: "a06ab8c97f7935c2c199",
-            pinata_secret_api_key:
-              "061c86a7026cc5ef98083708e548fc9ed4c50df281ac0b9fa87a2a565f452eb3",
+            pinata_api_key: process.env.NEXT_PUBLIC_API_KEY,
+            pinata_secret_api_key: process.env.NEXT_PUBLIC_SECRET_KEY,
           },
         }
       );
@@ -119,9 +115,8 @@ export default function MintNft() {
           maxContentLength: "Infinity",
           headers: {
             "Content-Type": "application/json",
-            pinata_api_key: "a06ab8c97f7935c2c199",
-            pinata_secret_api_key:
-              "061c86a7026cc5ef98083708e548fc9ed4c50df281ac0b9fa87a2a565f452eb3",
+            pinata_api_key: process.env.NEXT_PUBLIC_API_KEY,
+            pinata_secret_api_key: process.env.NEXT_PUBLIC_SECRET_KEY,
           },
         }
       );
