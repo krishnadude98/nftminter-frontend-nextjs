@@ -226,7 +226,9 @@ export default function MintNft() {
           </button> */}
         </div>
       ) : (
-        <div>No Lottery detected change network to sepolia</div>
+        <div className="text-white">
+          No NFT COntract detected please switch to Polygon Mumbai Testnet
+        </div>
       )}
     </div>
   );
