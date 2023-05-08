@@ -98,8 +98,9 @@ export default function MintNft() {
           maxContentLength: "Infinity",
           headers: {
             "Content-Type": "multipart/form-data",
-            pinata_api_key: process.env.NEXT_PUBLIC_API_KEY,
-            pinata_secret_api_key: process.env.NEXT_PUBLIC_SECRET_KEY,
+            pinata_api_key: "a06ab8c97f7935c2c199",
+            pinata_secret_api_key:
+              "061c86a7026cc5ef98083708e548fc9ed4c50df281ac0b9fa87a2a565f452eb3",
           },
         }
       );
@@ -118,8 +119,9 @@ export default function MintNft() {
           maxContentLength: "Infinity",
           headers: {
             "Content-Type": "application/json",
-            pinata_api_key: process.env.NEXT_PUBLIC_API_KEY,
-            pinata_secret_api_key: process.env.NEXT_PUBLIC_SECRET_KEY,
+            pinata_api_key: "a06ab8c97f7935c2c199",
+            pinata_secret_api_key:
+              "061c86a7026cc5ef98083708e548fc9ed4c50df281ac0b9fa87a2a565f452eb3",
           },
         }
       );
