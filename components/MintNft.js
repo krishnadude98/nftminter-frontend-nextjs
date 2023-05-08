@@ -87,6 +87,8 @@ export default function MintNft() {
     setIsPinning(true);
     const formData = new FormData();
     formData.append("file", file);
+    console.log("NEXT_PUBLIC_API_KEY", process.env.NEXT_PUBLIC_API_KEY);
+    console.log("NEXT_PUBLIC_SECRET_KEY", process.env.NEXT_PUBLIC_SECRET_KEY);
     try {
       const response = await axios.post(
         "https://api.pinata.cloud/pinning/pinFileToIPFS",
